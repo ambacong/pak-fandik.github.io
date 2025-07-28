@@ -9,9 +9,8 @@ section {
   padding-top: 5rem;
 }
 .circle-image {
-  border-radius: 50%; 
-  object-fit: cover; 
-  width: 200px; 
-  height: 200px; 
+  border-radius: 50%; /* Membuat gambar menjadi lingkaran sempurna */
+  object-fit: cover; /* Memastikan gambar terisi dengan rapi tanpa distorsi */
+  width: 200px; /* Sesuaikan ukuran jika perlu */
+  height: 200px; /* Pastikan tinggi dan lebar sama untuk lingkaran sempurna */
 }
-
