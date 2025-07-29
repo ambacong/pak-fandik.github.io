@@ -4,268 +4,139 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio of Isam Hasib, a student and programmer from SMKN 5 Malang" />
+    <meta name="description" content="Portfolio of Radya Erick Febriansyah - SMKN 5 Malang Student">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- my css -->
     <style>
       :root {
-        --primary-color: #3498db;
-        --secondary-color: #2c3e50;
-        --accent-color: #e74c3c;
-        --light-color: #ecf0f1;
-        --dark-color: #2c3e50;
-        --text-color: #333;
-        --bg-color: #fff;
+        --primary-color: #6c757d;
+        --secondary-color: #b4b19d;
+        --dark-color: #343a40;
+        --light-color: #f8f9fa;
       }
-
-      /* Theme 1 - Default (Blue) */
-      .theme-1 {
-        --primary-color: #3498db;
-        --secondary-color: #2c3e50;
-        --accent-color: #e74c3c;
-      }
-
-      /* Theme 2 - Alternative (Purple/Teal) */
-      .theme-2 {
-        --primary-color: #9b59b6;
-        --secondary-color: #1abc9c;
-        --accent-color: #e67e22;
-      }
-
+      
       body {
-        font-family: "Poppins", sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         overflow-x: hidden;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        transition: all 0.3s ease;
       }
-
+      
+      /* Navbar */
       .navbar {
         transition: all 0.3s ease;
-        background-color: var(--primary-color) !important;
       }
-
+      
       .navbar.scrolled {
-        background-color: var(--secondary-color) !important;
+        background-color: var(--dark-color) !important;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
-
-      .navbar-brand {
-        font-weight: 700;
-        color: white;
-      }
-
+      
       .nav-link {
-        font-weight: 500;
         position: relative;
-        margin: 0 10px;
-        color: white !important;
       }
-
+      
       .nav-link::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 0;
         height: 2px;
+        background: var(--light-color);
         bottom: 0;
         left: 0;
-        background-color: white;
         transition: width 0.3s ease;
       }
-
+      
       .nav-link:hover::after {
         width: 100%;
       }
-
+      
+      /* Jumbotron */
       .jumbotron {
         padding-top: 6rem;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(135deg, #b4b19d 0%, #6c757d 100%);
         color: white;
-        position: relative;
       }
-
-      .rounded-circle {
+      
+      .img-thumbnail {
         border: 5px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
       }
-
-      .rounded-circle:hover {
+      
+      .img-thumbnail:hover {
         transform: scale(1.05);
       }
-
-      .display-4 {
-        font-weight: 700;
-        margin-top: 20px;
-      }
-
-      .lead {
-        font-weight: 300;
-        margin-bottom: 30px;
-      }
-
+      
+      /* Sections */
       section {
         padding: 5rem 0;
       }
-
-      #about {
-        background-color: var(--light-color);
-      }
-
+      
+      /* Projects */
       .card {
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
       }
-
+      
       .card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-
+      
       .card-img-top {
         height: 200px;
         object-fit: cover;
       }
-
-      #contact {
-        background-color: var(--light-color);
-      }
-
-      .form-control {
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        padding: 10px 15px;
-      }
-
+      
+      /* Contact Form */
       .form-control:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 0.25rem rgba(180, 177, 157, 0.25);
       }
-
+      
       .btn-primary {
-        background-color: var(--primary-color);
-        border: none;
-        padding: 10px 25px;
-        border-radius: 5px;
-        font-weight: 500;
-        transition: all 0.3s ease;
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
       }
-
+      
       .btn-primary:hover {
-        background-color: var(--secondary-color);
-        transform: translateY(-2px);
+        background-color: #9c9987;
+        border-color: #9c9987;
       }
-
+      
+      /* Footer */
       footer {
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+        padding: 2rem 0;
       }
-
-      footer a {
-        color: var(--light-color);
-        text-decoration: none;
-        font-weight: 600;
+      
+      /* Wave SVG */
+      .wave {
+        margin-bottom: -5px;
       }
-
-      footer a:hover {
-        text-decoration: underline;
-        color: white;
-      }
-
-      .social-icons {
-        margin-top: 20px;
-      }
-
-      .social-icons a {
-        color: white;
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
-
-      .social-icons a:hover {
-        color: var(--light-color);
-        transform: translateY(-3px);
-      }
-
-      .skill-badge {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        margin: 5px;
-        display: inline-block;
-        font-size: 0.9rem;
-      }
-
-      .project-placeholder {
-        background-color: #f8f9fa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 200px;
-        color: #6c757d;
-        font-weight: 500;
-      }
-
-      .spinner {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        vertical-align: middle;
-      }
-
-      .theme-switcher {
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
-      }
-
-      .theme-switcher-btn {
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        font-size: 1.2rem;
-        transition: transform 0.3s ease;
-      }
-
-      .theme-switcher-btn:hover {
-        transform: rotate(30deg);
-      }
-
-      @keyframes rotate {
-        100% {
-          transform: rotate(360deg);
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .jumbotron {
+          padding-top: 5rem;
+        }
+        
+        section {
+          padding: 3rem 0;
         }
       }
     </style>
 
-    <title>Isam Hasib | Student & Programmer</title>
+    <title>Radya Erick | Portfolio</title>
   </head>
-  <body id="home" data-bs-spy="scroll" data-bs-target=".navbar" class="theme-1">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+  <body id="home">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #b4b19d">
       <div class="container">
-        <a class="navbar-brand" href="#">ISAM HASIB</a>
+        <a class="navbar-brand fw-bold" href="#">Radya Erick</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -278,371 +149,247 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
-            <li class="nav-item theme-switcher">
-              <button class="theme-switcher-btn" id="themeToggle">
-                <i class="fas fa-palette"></i>
-              </button>
+            <li class="nav-item">
+              <a class="nav-link" href="index2.html">Riwayat Pendidikan</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- navbar -->
+    <!-- AKHIR NAVBAR -->
 
-    <!-- hero section -->
+    <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <div class="container" data-aos="fade-up">
-        <img src="img/Gambar WhatsApp 2025-07-24 pukul 13.21.26_f994df2a.jpg" class="rounded-circle" width="200" alt="Isam Hasib" />
-        <h1 class="display-4 mt-4">Isam Hasib Aidan</h1>
-        <p class="lead">Student | Programmer</p>
+      <div data-aos="fade-down" data-aos-duration="1000">
+        <img src="img/Gambar WhatsApp 2025-07-24 pukul 07.27.16_c51a1859.jpg" alt="Radya Erick" width="200" class="rounded-circle img-thumbnail mb-4" />
+        <h1 class="display-4 fw-bold">Radya Erick Febriansyah</h1>
+        <p class="lead">Student at SMKN 5 Malang | Automotive Enthusiast</p>
         <div class="mt-4">
-          <a href="#projects" class="btn btn-primary btn-lg me-2"> <i class="fas fa-laptop-code me-2"></i>View Projects </a>
-          <a href="#contact" class="btn btn-outline-light btn-lg"> <i class="fas fa-envelope me-2"></i>Contact Me </a>
+          <a href="#projects" class="btn btn-light btn-lg mx-2">My Projects</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg mx-2">Contact Me</a>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,160L60,154.7C120,149,240,139,360,154.7C480,171,600,213,720,234.7C840,256,960,256,1080,218.7C1200,181,1320,107,1380,69.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
+      <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#FFFFFF" fill-opacity="1" d="M0,160L16,181.3C32,203,64,245,96,256C128,267,160,245,192,202.7C224,160,256,96,288,64C320,32,352,32,384,69.3C416,107,448,181,480,218.7C512,256,544,256,576,234.7C608,213,640,171,672,160C704,149,736,171,768,181.3C800,192,832,192,864,181.3C896,171,928,149,960,128C992,107,1024,85,1056,85.3C1088,85,1120,107,1152,144C1184,181,1216,235,1248,256C1280,277,1312,267,1344,218.7C1376,171,1408,85,1424,42.7L1440,0L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z"></path>
       </svg>
     </section>
-    <!-- hero section -->
+    <!-- Akhir Jumbotron -->
 
-    <!-- about -->
-    <section id="about">
+    <!-- About -->
+    <section id="about" class="bg-light">
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col">
-            <h2 class="display-5 fw-bold">About Me</h2>
-            <div class="underline mx-auto"></div>
+            <h2 class="fw-bold">About Me</h2>
+            <hr class="w-25 mx-auto">
           </div>
         </div>
         <div class="row justify-content-center fs-5">
-          <div class="col-md-8 text-center" data-aos="fade-up">
-            <p>Halo! Saya Isam Hasib Aidan, seorang programmer muda yang bersemangat dari Malang, Jawa Timur, Indonesia.</p>
-            <p>Saat ini saya adalah siswa di SMKN 5 Malang, dengan spesialisasi Rekayasa Perangkat Lunak (RPL - Rekayasa Perangkat Lunak) di kelas 11.</p>
-            <p>Dengan minat yang kuat pada teknologi dan pemrograman, saya terus belajar dan mengembangkan keterampilan saya untuk menciptakan solusi inovatif..</p>
+          <div class="col-md-5 mb-4" data-aos="fade-right" data-aos-duration="1000">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-3"><i class="bi bi-person-badge"></i> Personal</h3>
+                <p class="card-text">Halo! Nama saya Radya Erick Febriansyah, siswa dari SMKN 5 Malang, kelas 11 RPL 1.</p>
+                <p class="card-text">Saya memiliki minat besar dalam pengembangan perangkat lunak dan ingin menjadi seorang full-stack developer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 mb-4" data-aos="fade-left" data-aos-duration="1000">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-3"><i class="bi bi-tools"></i> Hobby</h3>
+                <p class="card-text">Saya adalah seorang yang memiliki ketertarikan besar di dunia otomotif.</p>
+                <p class="card-text">Saya senang mempelajari mesin, sistem kelistrikan, dan modifikasi kendaraan. Selain itu, saya juga menikmati fotografi otomotif.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,32L26.7,26.7C53.3,21,107,11,160,21.3C213.3,32,267,64,320,101.3C373.3,139,427,181,480,165.3C533.3,149,587,75,640,48C693.3,21,747,43,800,58.7C853.3,75,907,85,960,80C1013.3,75,1067,53,1120,37.3C1173.3,21,1227,11,1280,10.7C1333.3,11,1387,21,1413,26.7L1440,32L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-        ></path>
+        <path fill="#FFFFFF" fill-opacity="1" d="M0,224L15,208C30,192,60,160,90,138.7C120,117,150,107,180,96C210,85,240,75,270,58.7C300,43,330,21,360,58.7C390,96,420,192,450,240C480,288,510,288,540,256C570,224,600,160,630,117.3C660,75,690,53,720,74.7C750,96,780,160,810,202.7C840,245,870,267,900,245.3C930,224,960,160,990,144C1020,128,1050,160,1080,181.3C1110,203,1140,213,1170,229.3C1200,245,1230,267,1260,245.3C1290,224,1320,160,1350,144C1380,128,1410,160,1425,176L1440,192L1440,320L1425,320C1410,320,1380,320,1350,320C1320,320,1290,320,1260,320C1230,320,1200,320,1170,320C1140,320,1110,320,1080,320C1050,320,1020,320,990,320C960,320,930,320,900,320C870,320,840,320,810,320C780,320,750,320,720,320C690,320,660,320,630,320C600,320,570,320,540,320C510,320,480,320,450,320C420,320,390,320,360,320C330,320,300,320,270,320C240,320,210,320,180,320C150,320,120,320,90,320C60,320,30,320,15,320L0,320Z"></path>
       </svg>
     </section>
-    <!-- about -->
+    <!-- Akhir About -->
 
-    <!-- skills -->
-    <section id="skills" class="bg-light">
-      <div class="container">
-        <div class="row text-center mb-5">
-          <div class="col">
-            <h2 class="display-5 fw-bold">My Skills</h2>
-            <div class="underline mx-auto"></div>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center" data-aos="fade-up">
-            <span class="skill-badge">HTML5</span>
-            <span class="skill-badge">CSS3</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">Bootstrap</span>
-            <span class="skill-badge">Web Development</span>
-            <span class="skill-badge">Problem Solving</span>
-            <span class="skill-badge">Teamwork</span>
-            <span class="skill-badge">Creativity</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- skills -->
-
-    <!-- projects -->
+    <!-- Projects -->
     <section id="projects">
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col">
-            <h2 class="display-5 fw-bold">My Projects</h2>
-            <div class="underline mx-auto"></div>
-            <p class="lead">Here are some of my recent projects</p>
+            <h2 class="fw-bold">My Projects</h2>
+            <hr class="w-25 mx-auto">
+            <p class="lead">Some of my automotive-related projects and interests</p>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card h-100">
-              <div class="project-placeholder">
-                <i class="fas fa-code fa-3x mb-3"></i>
-                <p>Project Image</p>
-              </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card">
+              <img src="img/84016cb3-17ad-4757-aa5f-73b3c43d191c.jpg" class="card-img-top" alt="Spark Plugs Project">
               <div class="card-body">
-                <h5 class="card-title">Kebangkitan Raja Iblis</h5>
-                <p class="card-text">Aplikasi web bertema fantasi yang mengeksplorasi penceritaan kreatif melalui elemen interaktif.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">HTML, CSS, JavaScript</small>
-                  <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                </div>
+                <h5 class="card-title">Spark Plug Installation</h5>
+                <p class="card-text">Busi NGK atau Denso resmi (Original/Asli) memastikan pembakaran sempurna dan efisiensi bahan bakar.</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card h-100">
-              <div class="project-placeholder">
-                <i class="fas fa-gamepad fa-3x mb-3"></i>
-                <p>Project Image</p>
-              </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="card">
+              <img src="img/Gear Belakang SSS Ninja 415;428 ORIGINAL Uk_ 35 36 37 38 39 40 41 42 43 44 45 46.jpg" class="card-img-top" alt="Gear Project">
               <div class="card-body">
-                <h5 class="card-title">Isekai Adventure</h5>
-                <p class="card-text">Game cerita interaktif dengan beberapa akhir berdasarkan pilihan dan jalur pengguna.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">JavaScript, Game Design</small>
-                  <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                </div>
+                <h5 class="card-title">Gear Replacement</h5>
+                <p class="card-text">Gear Belakang SSS Ninja 415;428 ORIGINAL berbagai ukuran untuk performa optimal.</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card h-100">
-              <div class="project-placeholder">
-                <i class="fas fa-globe fa-3x mb-3"></i>
-                <p>Project Image</p>
-              </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="card">
+              <img src="img/KLEP SET PAYUNG KLEP SEAL SUZUKI SATRIA FU 150 KARBU KUALITAS ORIGINAL Motor Motorcycle Sparepart TERMURAH.jpg" class="card-img-top" alt="Valve Project">
               <div class="card-body">
-                <h5 class="card-title">World War III Simulation</h5>
-                <p class="card-text">Simulasi geopolitik yang mengeksplorasi skenario potensial dan hasil konflik global.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <small class="text-muted">Data Visualization, JavaScript</small>
-                  <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                </div>
+                <h5 class="card-title">Valve Set Installation</h5>
+                <p class="card-text">Klep set payung klep seal suzuki Satria FU 150 karbu kualitas original untuk performa mesin maksimal.</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#f8f9fa"
-          fill-opacity="1"
-          d="M0,160L60,154.7C120,149,240,139,360,154.7C480,171,600,213,720,234.7C840,256,960,256,1080,218.7C1200,181,1320,107,1380,69.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
+        <path fill="#f8f9fa" fill-opacity="1" d="M0,256L16,256C32,256,64,256,96,234.7C128,213,160,171,192,154.7C224,139,256,149,288,181.3C320,213,352,267,384,288C416,309,448,299,480,288C512,277,544,267,576,224C608,181,640,107,672,101.3C704,96,736,160,768,186.7C800,213,832,203,864,170.7C896,139,928,85,960,85.3C992,85,1024,139,1056,154.7C1088,171,1120,149,1152,149.3C1184,149,1216,171,1248,197.3C1280,224,1312,256,1344,256C1376,256,1408,224,1424,208L1440,192L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z"></path>
       </svg>
     </section>
-    <!-- projects -->
+    <!-- Akhir Projects -->
 
-    <!-- contact -->
-    <section id="contact">
+    <!-- Contact -->
+    <section id="contact" class="bg-light">
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col">
-            <h2 class="display-5 fw-bold">Contact Me</h2>
-            <div class="underline mx-auto"></div>
-            <p class="lead">Punya proyek atau ingin berkolaborasi? Jangan ragu untuk menghubungi kami!</p>
+            <h2 class="fw-bold">Contact Me</h2>
+            <hr class="w-25 mx-auto">
+            <p class="lead">Have questions or want to discuss automotive projects? Get in touch!</p>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form name="contactForm" id="contactForm" data-aos="fade-up">
+          <div class="col-md-8 col-lg-6" data-aos="zoom-in" data-aos-duration="1000">
+            <form>
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" required />
+                <input type="text" class="form-control" id="name" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" required />
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" class="form-control" id="email" required>
               </div>
               <div class="mb-3">
                 <label for="subject" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="subject" name="subject" required />
+                <input type="text" class="form-control" id="subject">
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="5" name="pesan" required></textarea>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
               </div>
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
-                  <span id="submitText">Send Message</span>
-                </button>
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
               </div>
-              <div id="formFeedback" class="mt-3 text-center"></div>
             </form>
           </div>
         </div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#6c757d" fill-opacity="1" d="M0,96L48,133.3C96,171,192,245,288,282.7C384,320,480,320,576,272C672,224,768,128,864,80C960,32,1056,32,1152,80C1248,128,1344,224,1392,272L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
     </section>
-    <!-- contact -->
+    <!-- Akhir Contact -->
 
-    <!-- footer -->
-    <footer class="py-4">
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="mb-0">© 2023 Isam Hasib. All rights reserved.</p>
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <h5>Radya Erick Febriansyah</h5>
+            <p class="mb-0">Student & Automotive Enthusiast</p>
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <div class="social-icons">
-              <a href="https://www.instagram.com/isomchasib/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://github.com/ambacong" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
+            <a href="https://www.instagram.com/puy4k._?igsh=a2YyMjltMzF5Nnd3" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-4"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
           </div>
+        </div>
+        <hr class="my-3">
+        <div class="text-center">
+          <p class="mb-0">Created with <i class="bi bi-heart-fill text-danger"></i> by Radya Erick &copy; 2024</p>
         </div>
       </div>
     </footer>
-    <!-- footer -->
+    <!-- Akhir Footer -->
 
-    <!-- Back to top button -->
-    <a href="#" class="btn btn-primary btn-floating btn-lg back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-primary btn-lg back-to-top position-fixed bottom-0 end-0 m-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; display: none;">
+      <i class="bi bi-arrow-up"></i>
     </a>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    
     <script>
       // Initialize AOS animation
       AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        once: true,
+        once: true
       });
-
-      // Theme switching functionality
-      const themeToggle = document.getElementById("themeToggle");
-      const body = document.body;
-
-      // Check for saved theme preference or use default
-      const currentTheme = localStorage.getItem("theme") || "theme-1";
-      body.classList.add(currentTheme);
-
-      // Update button icon based on current theme
-      updateThemeIcon();
-
-      themeToggle.addEventListener("click", function () {
-        // Toggle between theme classes
-        if (body.classList.contains("theme-1")) {
-          body.classList.remove("theme-1");
-          body.classList.add("theme-2");
-          localStorage.setItem("theme", "theme-2");
-        } else {
-          body.classList.remove("theme-2");
-          body.classList.add("theme-1");
-          localStorage.setItem("theme", "theme-1");
-        }
-
-        updateThemeIcon();
-      });
-
-      function updateThemeIcon() {
-        if (body.classList.contains("theme-1")) {
-          themeToggle.innerHTML = '<i class="fas fa-palette"></i>';
-          themeToggle.title = "Switch to Purple/Teal Theme";
-        } else {
-          themeToggle.innerHTML = '<i class="fas fa-paint-brush"></i>';
-          themeToggle.title = "Switch to Blue Theme";
-        }
-      }
-
+      
       // Navbar scroll effect
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
+          navbar.classList.add('scrolled');
         } else {
-          navbar.classList.remove("scrolled");
+          navbar.classList.remove('scrolled');
         }
       });
-
+      
       // Back to top button
-      const backToTopButton = document.getElementById("backToTop");
-
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset > 300) {
-          backToTopButton.style.display = "block";
+      const backToTopButton = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopButton.style.display = 'flex';
         } else {
-          backToTopButton.style.display = "none";
+          backToTopButton.style.display = 'none';
         }
       });
-
-      backToTopButton.addEventListener("click", function (e) {
+      
+      backToTopButton.addEventListener('click', function(e) {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
           e.preventDefault();
-
-          const targetId = this.getAttribute("href");
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
           const targetElement = document.querySelector(targetId);
-
           if (targetElement) {
             window.scrollTo({
               top: targetElement.offsetTop - 70,
-              behavior: "smooth",
+              behavior: 'smooth'
             });
-
-            // Close mobile menu if open
-            const navbarToggler = document.querySelector(".navbar-toggler");
-            const navbarCollapse = document.querySelector(".navbar-collapse");
-            if (navbarCollapse.classList.contains("show")) {
-              navbarToggler.click();
-            }
           }
         });
-      });
-
-      // Form submission
-      const scriptURL = "https://script.google.com/macros/s/AKfycbw95sFIrXVwUule4UORWRHfyu8WuXn3LvmyHaaBQN2bOZi0UxnWwArMP6QEgThCKCGs/exec";
-      const form = document.forms["contactForm"];
-      const submitBtn = document.getElementById("submitBtn");
-      const submitText = document.getElementById("submitText");
-      const formFeedback = document.getElementById("formFeedback");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Show loading state
-        submitBtn.disabled = true;
-        submitText.innerHTML =
-          '<span class="spinner"><svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" opacity="0.2"/><path d="M12 2a10 10 0 0 1 10 10h-2a8 8 0 0 0-8-8V2z"/></svg></span> Sending...';
-
-        fetch(scriptURL, {
-          method: "POST",
-          body: new FormData(form),
-        })
-          .then((response) => {
-            formFeedback.innerHTML = '<div class="alert alert-success">Message sent successfully! I\'ll get back to you soon.</div>';
-            form.reset();
-          })
-          .catch((error) => {
-            formFeedback.innerHTML = '<div class="alert alert-danger">Oops! Something went wrong. Please try again later.</div>';
-            console.error("Error!", error.message);
-          })
-          .finally(() => {
-            submitBtn.disabled = false;
-            submitText.textContent = "Send Message";
-
-            // Hide feedback after 5 seconds
-            setTimeout(() => {
-              formFeedback.innerHTML = "";
-            }, 5000);
-          });
       });
     </script>
   </body>
